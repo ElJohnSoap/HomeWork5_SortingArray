@@ -3,6 +3,7 @@
 массива не сортировать, а расположить в обратном порядке.*/
 #include <iostream>
 using namespace std;
+
 void print(int arr[], int size)
 {
 	for (int i = 0; i < size; i++) {

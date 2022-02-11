@@ -1,0 +1,3 @@
+﻿  HomeWorkTask2.cpp
+C:\Users\hloiv\source\repos\HomeWork5_SortingArray\HomeWorkTask2\HomeWorkTask2.cpp(11,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  HomeWorkTask2.vcxproj -> C:\Users\hloiv\source\repos\HomeWork5_SortingArray\HomeWorkTask2\x64\Debug\HomeWorkTask2.exe

@@ -1,20 +1,69 @@
-// HomeWorkTask2.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+/*2. Дан массив случайных чисел в диапазоне от –20 до +20.
+Необходимо найти позиции крайних отрицательных
+элементов (самого левого отрицательного элемента
+и самого правого отрицательного элемента) и отсортировать элементы, находящиеся между ними.*/
 
 #include <iostream>
-
+using namespace std;
+#define Endl cout << endl;
 int main()
 {
-    std::cout << "Hello World!\n";
+	srand(time(0));
+	const int size = 20;
+	int arr[size];
+	int left, right;
+	bool change = false;
+
+	for (int i = 0; i < size; i++)
+		arr[i] = rand() % 40 - 20;
+
+	for (int i = 0; i < size; i++) {
+		cout << arr[i] << "\t";
+		if (!((i + 1) % 10))
+			Endl;
+	}
+	Endl;
+	for (int i = 0; i < size; i++) {
+		if (arr[i] < 0) {
+			left = i;
+			break;
+		}
+	}
+	for (int i = size-1; i >=0; i--) {
+		if (arr[i] < 0) {
+			right = i;
+			break;
+		}
+	}
+	cout << "left = " << left << "\t" << "right - " << right;
+	Endl;
+
+	for (int i = left; i <=right; i++)
+	{
+		change = false;
+		for (int j = right; j > i; j--)
+		{
+			if (arr[j] < arr[j - 1])
+			{
+				swap(arr[j], arr[j - 1]);
+				change = true;
+			}
+		}
+	}
+	
+	for (int i = left; i <=right; i++) {
+		cout << arr[i] << "\t";
+		if (!((i + 1) % 10))
+			Endl;
+	}
+	Endl;
+	Endl;
+	for (int i = 0; i < size; i++) {
+		cout << arr[i] << "\t";
+		if (!((i + 1) % 10))
+			Endl;
+	}
+		
+	Endl;
+	return 0;
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file

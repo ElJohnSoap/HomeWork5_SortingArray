@@ -40,13 +40,13 @@ int main()
 
 	for (int i = left; i <=right; i++)
 	{
-		change = false;
+		
 		for (int j = right; j > i; j--)
 		{
 			if (arr[j] < arr[j - 1])
 			{
 				swap(arr[j], arr[j - 1]);
-				change = true;
+				
 			}
 		}
 	}
